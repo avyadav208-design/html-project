@@ -3,15 +3,6 @@
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        body{
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            font-family: sans-serif;
-        }
         .card
         {
             padding: 40px 60px;
@@ -30,6 +21,22 @@
             padding: 50px;
             background-color: green;
         }
+        .para1
+        {
+            /*position: relative;*/
+             width: 400px;
+            height: 200px;
+            border: 2px solid black;  
+        }
+        .para2
+        {
+            position: absolute;
+            top: 80px;
+            right: 0px;
+            width: 200px;
+            height: 100px;
+            border:2px solid red;
+        }
     </style>
 </head>
 <body>
@@ -47,6 +54,12 @@
    </div><br>
    <div class="pad">
     Checking padding and margin.
+   </div><br>
+   <div class="para1">
+    Paragraph 1
+   <div class="para2">
+    Paragraph 2
+   </div>
    </div>
 </body>
 </html>
