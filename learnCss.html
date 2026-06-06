@@ -61,6 +61,28 @@
             overflow: scroll;
             opacity: 1;
         }
+        #grey:hover
+        {
+            filter: sepia(1);
+        }
+        .anime
+        {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: animedata 1s infinite;
+        }
+        @keyframes animedata
+        {
+            form
+            {
+                background-color: green;
+            }
+            to
+            {
+                background-color: blue  ;
+            } 
+        } 
     </style>
 </head>
 <body>
@@ -104,6 +126,12 @@
     Lorem ipsum dolor sit amet consectetur.
     Lorem ipsum dolor sit amet consectetur.
     Lorem ipsum dolor sit amet consectetur.
+   </div><br>
+
+   <img src="pic.1.jpg" id="grey">
+   
+   <div class="anime">
+
    </div>
 </body>
 </html>
