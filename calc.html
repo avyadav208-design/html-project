@@ -1,37 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: yellow;
+        }
+        .calculator
+        {
+            background: yellowgreen;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #display
+        {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .button
+        {
+            display: grid;
+            grid-template-columns: repeat(4,60px);
+            gap: 10px;
+        }
+        button
+        {
+            height: 60px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+
+           let display = document.getElementById("display");
+           function appendvalue(value)
+           {
+            display.value += value;
+           }
+           function clearDisplay()
+           {
+            display.value = "";
+           }
+           function calculate()
+           {
+            try{
+                display.value = eval(display.value);
+            }
+            catch{
+                display.value = "Error";
+            }
+           }
+    </script>
 </head>
 <body>
-    <form>
-        <label for="value1">Number 1:</label>
-        <input  id="value1" type="Number"></input>
-         <label for="value2">Number 2:</label>
-        <input  id="value2" type="Number"></input>
-        <label>Result=</label>
-        <div id="result"></div>
 
+    <div class="calculator">
+        <input type="text" id="display" readonly>
 
-        <button id="add" type="button" onclick="addition()">+</button>
-        <button id="sub" type="button"  onclick="subtraction()">-</button>
-        <button id="mul" type="button"  onclick="multiply()">*</button>
-        <button id="divi" type="button"  onclick="divide()">/</button>
-        <button id="remi"  type="button" onclick="module()">%</button>
-    </form>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendvalue ('/')">/</button>
+            <button onclick="appendvalue ('*')">*</button>
+            <button onclick="appendvalue ('-')">-</button>
+            <br>
 
-    <script>
-         function addition()
-        {
-           var data1 =Number(document.getElementById("value1").value);
-           var data2 = Number(document.getElementById("value2").value);
-           var result = data1+data2;
+            <button onclick="appendvalue('9')">9</button>
+            <button onclick="appendvalue('8')">8</button>
+            <button onclick="appendvalue('7')">7</button>
+            <button onclick="appendvalue('+')">+</button>
+            <br>
 
-           document.getElementById("result").innerHTML = result;
-        }
-    </script>
+            <button onclick="appendvalue('6')">6</button>
+            <button onclick="appendvalue('5')">5</button>
+            <button onclick="appendvalue('4')">4</button>
+            <button onclick="calculate">=</button>
+            <br>
 
+            <button onclick="appendvalue('3')">3</button>
+            <button onclick="appendvalue('2')">2</button>
+            <button onclick="appendvalue('1')">1</button>
+            <button onclick="appendvalue('0')">0</button>
+            <button onclick="appendvalue('.')">.</button>
+            </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
